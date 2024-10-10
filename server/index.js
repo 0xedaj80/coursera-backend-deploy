@@ -23,6 +23,9 @@ app.use(cors(corsOptions)); // Use CORS middleware with defined options
 
 app.use("/admin", adminRouter)
 app.use("/users", userRouter)
+app.get("/",(req,res)=>{
+   res.json({msg:"hellow"})
+})
 
 async function main(){
   await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "course-selling" });
